@@ -1,3 +1,4 @@
+---
 host: get.scrapehero.com
 info:
   title: News API
@@ -6,7 +7,7 @@ tags:
   - name: Endpoints
     description: News API
 paths:
-  /news-api/news/:
+  "/news-api/news/":
     get:
       tags:
         - Endpoints
@@ -62,15 +63,22 @@ paths:
           type: string
           default: "277,4171"
           required: false
-          description: Source ID from the /source endpoint. Provide multiple source IDs separated by comma to get news from multiple sources.
+          description:
+            Source ID from the /source endpoint. Provide multiple source
+            IDs separated by comma to get news from multiple sources.
         - in: query
           name: category_id
           type: string
           default: "13010000,04018000"
           required: false
-          description: IPTC codes of category or subcategory from the /categories endpoint to filter news from particular categories. Provide multiple category IPTC codes separated by comma to get news from multiple categories.
-      description: "Returns all news from the sources that matches the search term, sentiment, start date, end date, source and the news category."
-  /news-api/sources/:
+          description:
+            IPTC codes of category or subcategory from the /categories endpoint
+            to filter news from particular categories. Provide multiple category IPTC
+            codes separated by comma to get news from multiple categories.
+      description:
+        Returns all news from the sources that matches the search term,
+        sentiment, start date, end date, source and the news category.
+  "/news-api/sources/":
     get:
       tags:
         - Endpoints
@@ -94,7 +102,7 @@ paths:
           description: Failed to process request
       parameters: []
       description: News Sources
-  /news-api/categories/:
+  "/news-api/categories/":
     get:
       tags:
         - Endpoints
@@ -122,7 +130,7 @@ schemes:
   - https
   - http
 swagger: "2.0"
-basePath: /
+basePath: "/"
 security:
   - apikey: []
 securityDefinitions:
